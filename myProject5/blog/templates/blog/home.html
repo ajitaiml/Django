@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>#1 Template Basic</title>
+    <head>
+    <body>
+        <h1>Template Basic</h1>
+        {% comment%} This a 1st comment 
+        2nd comment
+        {% endcomment %}
+
+        {# This is 3rd comment#}
+        <p> This is a simple template to demonstrate basic HTML structure</p>
+        <p> Welcome to te blog home page!</p>
+
+        {% comment %} Single Variable {% endcomment %}
+        <p>Name:{{name}} </p>
+        <p>Age:{{age}} </p>
+
+        {% comment %} List Access {% endcomment %}
+        <p>First Skill : {{skills.0}}</p>
+        <p>Skills{{skills}}</p>
+
+        {% comment %} Obj Attribute {% endcomment %}
+        <p>User Name: {{user.name}}</p>
+        <p>User Age: {{user.age}}</p>
+
+        {% comment %} Disct {% endcomment %}
+        <h2>Blog Information</h2>
+        <p>Title : {{blog.title}}</p>
+        <p>Create At : {{blog.created_at}}</p>
+        <p>Content : {{blog.content | safe }}</p>
+        <p>Name : {{blog.author.name | safe }}</p>
+
+        {% comment %} Default Value {% endcomment %}
+        <p>Default Empty Value: {{empty_value | default:"No value Provided"}}
+        <p>Default Empty Value: {{empty_value | default_if_none:"No Data"}}
+
+
+    </body>
+    
+</html>
