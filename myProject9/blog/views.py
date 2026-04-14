@@ -1,5 +1,12 @@
+from django.shortcuts import render
 
-from django.http import HttpResponse
+def home(request):
+    return render(request, 'base.html')
 
-def blog_list(request):
-    return HttpResponse("This is blog home")
+def blog(request):
+    students_list =[
+        {"name":"Mohit", "class":"10th"},
+        {"name":"Rohit", "class":"9th"},
+        {"name":"Sohit", "class":"8th"},
+    ]
+    return render(request, 'blog.html', {'students': students_list})
